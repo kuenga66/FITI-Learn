@@ -10,7 +10,7 @@
 
 <header>
   <div class="navbar">
-    <a href="index.html" class="logo">FITI<span>Learn</span></a>
+    <a href="index.html" class="logo"><img src="logo.jpeg" alt="FITI Logo" class="nav-logo-img">FITI<span>Learn</span></a>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <nav class="nav-links">
       <a href="index.html">Home</a>
@@ -74,7 +74,7 @@
           <div class="card-body">
             <h2>BTN 1,500</h2>
             <p>per person · 8 hours · Certificate included</p>
-            <a class="btn btn-primary btn-lg" href="register.html">Enroll Now →</a>
+            <button class="btn btn-primary btn-lg" onclick="handleEnroll()">Enroll Now →</button>
             <a class="btn" href="institution.html" style="margin-top:10px;">Institutional Registration</a>
             <hr style="margin:20px 0; border:none; border-top:1px solid var(--border);">
             <p style="font-size:13px; color:var(--muted);">🔒 Secure enrollment · Zoom link sent within 24 hours · 7-day cancellation policy</p>
@@ -100,7 +100,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="logo">FITI<span>Learn</span></a>
+        <a href="index.html" class="logo"><img src="logo.jpeg" alt="FITI Logo" class="nav-logo-img">FITI<span>Learn</span></a>
         <p>Financial Institutions Training Institute — Bhutan's dedicated financial services training body, endorsed by the Royal Monetary Authority.</p>
       </div>
       <div class="footer-col">
@@ -129,5 +129,18 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+function handleEnroll() {
+  if (!isLoggedIn()) { window.location.href = 'register.html'; return; }
+  let enrolled = JSON.parse(sessionStorage.getItem('fiti_enrolled') || '[]');
+  const course = { title:'Credit Risk Assessment & Management', icon:'📊', category:'Banking', hours:8, progress:15 };
+  if (!enrolled.find(c => c.title === course.title)) {
+    enrolled.push(course);
+    sessionStorage.setItem('fiti_enrolled', JSON.stringify(enrolled));
+  }
+  showToast('Enrolled! Redirecting to your dashboard…', 'success');
+  setTimeout(() => { window.location.href = 'dashboard.html'; }, 1400);
+}
+</script>
 </body>
 </html>

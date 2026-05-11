@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard | FITILearn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <a href="index.html" class="logo"><img src="logo.jpeg" alt="FITI Logo" class="nav-logo-img">FITI<span>Learn</span></a>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="how.html">How It Works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About FITI</a>
+    </nav>
+    <div class="nav-actions">
+      <!-- updated dynamically by script.js -->
+    </div>
+  </div>
+</header>
+
+<div style="background:var(--light); min-height:calc(100vh - 68px);">
+  <div class="dashboard-wrap">
+
+    <div class="dash-header">
+      <div>
+        <p class="label" style="margin-bottom:6px;">Welcome back</p>
+        <h1 id="dashName">Loading…</h1>
+      </div>
+      <a href="courses.html" class="btn btn-primary btn-lg">Browse Courses →</a>
+    </div>
+
+    <!-- Stats row -->
+    <div class="dash-grid">
+      <div class="dash-stat">
+        <small>Enrolled Courses</small>
+        <b id="statEnrolled">0</b>
+        <p>Courses in progress or completed</p>
+      </div>
+      <div class="dash-stat">
+        <small>Certificates Earned</small>
+        <b id="statCerts">0</b>
+        <p>FITI-issued digital certificates</p>
+      </div>
+      <div class="dash-stat">
+        <small>Hours Completed</small>
+        <b id="statHours">0</b>
+        <p>Total learning hours logged</p>
+      </div>
+      <div class="dash-stat">
+        <small>Account Status</small>
+        <b style="font-size:22px;">Active</b>
+        <p>Pilot phase — May 2026</p>
+      </div>
+    </div>
+
+    <!-- My Courses -->
+    <h2 class="dash-section-title">My Courses</h2>
+    <div id="dashCourses" class="dash-course-list"></div>
+
+    <!-- Quick Links -->
+    <h2 class="dash-section-title" style="margin-top:48px;">Quick Links</h2>
+    <div class="dash-grid">
+      <a href="courses.html" class="solution-card" style="text-decoration:none; display:block;">
+        <div class="solution-icon">📚</div>
+        <h3>Browse Courses</h3>
+        <p>Explore all available FITI training programs.</p>
+      </a>
+      <a href="pricing.html" class="solution-card" style="text-decoration:none; display:block;">
+        <div class="solution-icon">💰</div>
+        <h3>Pricing Plans</h3>
+        <p>View individual and institutional pricing options.</p>
+      </a>
+      <a href="institution.html" class="solution-card" style="text-decoration:none; display:block;">
+        <div class="solution-icon">🏛️</div>
+        <h3>Institution Portal</h3>
+        <p>Register your organisation for bulk enrolments.</p>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none; padding:28px 0;">
+      <p>© 2026 Financial Institutions Training Institute (FITI).</p>
+      <p>Endorsed by the Royal Monetary Authority of Bhutan</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Populate dashboard with user info
+  (function() {
+    const user = getUser();
+    if (!user) return;
+    document.getElementById('dashName').textContent = 'Hello, ' + user.name + ' 👋';
+
+    // Demo: simulate some enrolled courses from sessionStorage or show empty state
+    const enrolled = JSON.parse(sessionStorage.getItem('fiti_enrolled') || '[]');
+    const container = document.getElementById('dashCourses');
+
+    document.getElementById('statEnrolled').textContent = enrolled.length;
+    document.getElementById('statCerts').textContent = enrolled.filter(c => c.progress >= 100).length;
+    document.getElementById('statHours').textContent = enrolled.reduce((a,c) => a + Math.round((c.progress/100)*c.hours), 0);
+
+    if (enrolled.length === 0) {
+      container.innerHTML = `
+        <div class="dash-empty">
+          <div style="font-size:48px; margin-bottom:16px;">📖</div>
+          <p>You haven't enrolled in any courses yet.</p>
+          <a href="courses.html" class="btn btn-primary btn-lg">Browse Courses →</a>
+        </div>
+      `;
+    } else {
+      enrolled.forEach(course => {
+        container.innerHTML += `
+          <div class="dash-course-row">
+            <div class="dash-course-icon">${course.icon}</div>
+            <div class="dash-course-info">
+              <h4>${course.title}</h4>
+              <p>${course.category} · ${course.hours} hours</p>
+            </div>
+            <div class="dash-progress">
+              <div class="dash-progress-label"><span>Progress</span><span>${course.progress}%</span></div>
+              <div class="dash-progress-bar"><div class="dash-progress-fill" style="width:${course.progress}%"></div></div>
+            </div>
+            <a href="course-detail.html" class="btn btn-primary">Continue →</a>
+          </div>
+        `;
+      });
+    }
+  })();
+</script>
+</body>
+</html>

@@ -508,3 +508,51 @@ footer {
   cursor: pointer; transition: all var(--transition);
 }
 .filter-btn:hover, .filter-btn.active { background: var(--green); color: var(--white); border-color: var(--green); }
+
+/* ── NAV LOGO IMAGE ─────────────────────────── */
+.nav-logo-img {
+  height: 36px;
+  width: 36px;
+  object-fit: contain;
+  border-radius: 6px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ── DASHBOARD ─────────────────────────────── */
+.dashboard-wrap { max-width: 1160px; margin: 0 auto; padding: 48px 28px; }
+.dash-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; flex-wrap: wrap; gap: 16px; }
+.dash-header h1 { font-size: 32px; margin: 0; }
+.dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-bottom: 48px; }
+.dash-stat {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r-md); padding: 28px 24px;
+}
+.dash-stat small { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--green3); }
+.dash-stat b { display: block; font-size: 34px; font-family: 'Playfair Display', serif; color: var(--green); margin: 8px 0 4px; }
+.dash-stat p { font-size: 13.5px; margin: 0; }
+.dash-section-title { font-size: 22px; margin-bottom: 20px; }
+.dash-course-list { display: flex; flex-direction: column; gap: 14px; }
+.dash-course-row {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r-md); padding: 20px 24px;
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+}
+.dash-course-icon { font-size: 28px; flex-shrink: 0; }
+.dash-course-info { flex: 1; min-width: 180px; }
+.dash-course-info h4 { font-size: 16px; margin-bottom: 4px; color: var(--green); }
+.dash-course-info p { font-size: 13px; margin: 0; }
+.dash-progress { flex: 1; min-width: 140px; }
+.dash-progress-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.dash-progress-bar { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.dash-progress-fill { height: 100%; background: var(--green3); border-radius: 4px; transition: width 0.8s ease; }
+.dash-empty {
+  background: var(--white); border: 1px dashed var(--border);
+  border-radius: var(--r-md); padding: 48px; text-align: center;
+}
+.dash-empty p { margin-bottom: 20px; }
