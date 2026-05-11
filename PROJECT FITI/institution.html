@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Institution Registration | FITILearn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <a href="index.html" class="logo">FITI<span>Learn</span></a>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="how.html">How It Works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About FITI</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn" href="login.html">Log In</a>
+      <a class="btn btn-primary" href="register.html">Register Free</a>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <p class="label">For Institutions</p>
+    <h1>Partner with FITILearn</h1>
+    <p>Enroll your staff, track progress, and meet RMA compliance training requirements through one institutional subscription.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="about-grid" style="gap:48px;">
+      <div>
+        <p class="label" style="margin-bottom:12px;">Why institutions choose FITI</p>
+        <h2 style="font-size:28px; margin-bottom:20px;">Everything your institution needs</h2>
+        <div class="solution-grid" style="grid-template-columns:1fr 1fr; gap:16px;">
+          <div class="solution-card">
+            <div class="solution-icon">👥</div>
+            <h3>Bulk Enrolment</h3>
+            <p>Enroll multiple staff members across departments in a single step.</p>
+          </div>
+          <div class="solution-card">
+            <div class="solution-icon">📋</div>
+            <h3>Training Records</h3>
+            <p>Centralized records of staff training and certification for HR and compliance.</p>
+          </div>
+          <div class="solution-card">
+            <div class="solution-icon">📅</div>
+            <h3>Priority Scheduling</h3>
+            <p>Institutional partners receive priority access to new and high-demand courses.</p>
+          </div>
+          <div class="solution-card">
+            <div class="solution-icon">🏅</div>
+            <h3>RMA-Recognised</h3>
+            <p>Certificates are recognised by RMA-regulated banks and insurance companies.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card" style="border-radius:var(--r-lg);">
+        <p class="label" style="margin-bottom:10px;">Get started</p>
+        <h1 style="font-size:28px;">Institution Registration</h1>
+        <p>For banks, insurance companies, government agencies, NGOs, and training partners.</p>
+
+        <div class="form-group">
+          <label>Institution Name</label>
+          <input type="text" placeholder="Bank of Bhutan">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Contact Person</label>
+            <input type="text" placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label>Job Title</label>
+            <input type="text" placeholder="HR Manager">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Work Email</label>
+          <input type="email" placeholder="hr@institution.bt">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+975 2 ...">
+        </div>
+        <div class="form-group">
+          <label>Institution Type</label>
+          <select>
+            <option value="">Select type...</option>
+            <option>Bank</option>
+            <option>Insurance Company</option>
+            <option>Government Agency</option>
+            <option>NGO</option>
+            <option>Other Financial Institution</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Training needs or number of staff</label>
+          <textarea rows="4" placeholder="e.g. 20 credit officers needing AML and Credit Risk training"></textarea>
+        </div>
+
+        <button class="btn btn-primary btn-lg" onclick="handleInstitution()">Submit Registration →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div style="position:relative;z-index:1;">
+    <h1>Questions? We're here to help.</h1>
+    <p>Contact our institutional team directly to discuss your training requirements.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary btn-lg" href="mailto:fiti@rma.org.bt">Email us directly</a>
+      <a class="btn btn-ghost btn-lg" href="pricing.html">View pricing plans</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">FITI<span>Learn</span></a>
+        <p>Financial Institutions Training Institute — Bhutan's dedicated financial services training body.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="courses.html">Courses</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="how.html">How it works</a>
+      </div>
+      <div class="footer-col">
+        <h4>Institution</h4>
+        <a href="about.html">About FITI</a>
+        <a href="institution.html">Partner with us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>fiti@rma.org.bt</p>
+        <p>+975 2 322 223</p>
+        <p>Thimphu, Bhutan</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Financial Institutions Training Institute (FITI). All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

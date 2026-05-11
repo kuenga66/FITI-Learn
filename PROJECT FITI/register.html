@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | FITILearn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <a href="index.html" class="logo">FITI<span>Learn</span></a>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="how.html">How It Works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About FITI</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn" href="login.html">Log In</a>
+      <a class="btn btn-primary" href="register.html">Register Free</a>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="form-wrap">
+      <div class="form-card">
+        <p class="label" style="margin-bottom:10px;">Get started free</p>
+        <h1>Create your account</h1>
+        <p>Join Bhutan's professional financial learning community. Free to register — pay only when you enroll in a course.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="regFirst">First name</label>
+            <input id="regFirst" type="text" placeholder="Kinley">
+          </div>
+          <div class="form-group">
+            <label for="regLast">Last name</label>
+            <input id="regLast" type="text" placeholder="Dorji">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="regEmail">Work email</label>
+          <input id="regEmail" type="email" placeholder="you@institution.bt">
+        </div>
+        <div class="form-group">
+          <label for="regOrg">Organisation</label>
+          <input id="regOrg" type="text" placeholder="Bank of Bhutan">
+        </div>
+        <div class="form-group">
+          <label for="regPassword">Password</label>
+          <input id="regPassword" type="password" placeholder="At least 6 characters">
+        </div>
+
+        <button class="btn btn-primary btn-lg" onclick="handleRegister()">Create Account →</button>
+
+        <p style="text-align:center; margin-top:20px; font-size:13.5px; color:var(--muted);">
+          By registering, you agree to FITI's terms and privacy policy.
+        </p>
+        <p style="text-align:center; font-size:14px;">
+          Already have an account? <a href="login.html" style="color:var(--green); font-weight:600;">Log in</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none; padding:28px 0;">
+      <p>© 2026 Financial Institutions Training Institute (FITI).</p>
+      <p><a href="index.html" style="color:rgba(186,243,228,0.5);">Back to home</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

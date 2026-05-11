@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In | FITILearn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <a href="index.html" class="logo">FITI<span>Learn</span></a>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="how.html">How It Works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About FITI</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="login.html">Log In</a>
+      <a class="btn" href="register.html">Register Free</a>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="form-wrap">
+      <div class="form-card">
+        <p class="label" style="margin-bottom:10px;">Welcome back</p>
+        <h1>Log In to FITILearn</h1>
+        <p>Access your courses, materials, and certificates.</p>
+
+        <div class="form-group">
+          <label for="loginEmail">Email address</label>
+          <input id="loginEmail" type="email" placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" type="password" placeholder="Your password">
+        </div>
+
+        <button class="btn btn-primary btn-lg" onclick="handleLogin()">Log In →</button>
+
+        <p style="text-align:center; margin-top:20px; font-size:14px;">
+          Don't have an account? <a href="register.html" style="color:var(--green); font-weight:600;">Register free</a>
+        </p>
+        <p style="text-align:center; font-size:14px; margin-top:8px;">
+          Registering your institution? <a href="institution.html" style="color:var(--green); font-weight:600;">Institution portal →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none; padding:28px 0;">
+      <p>© 2026 Financial Institutions Training Institute (FITI).</p>
+      <p><a href="index.html" style="color:rgba(186,243,228,0.5);">Back to home</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

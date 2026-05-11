@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses | FITILearn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <a href="index.html" class="logo">FITI<span>Learn</span></a>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html" class="active">Courses</a>
+      <a href="how.html">How It Works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About FITI</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn" href="login.html">Log In</a>
+      <a class="btn btn-primary" href="register.html">Register Free</a>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <p class="label">Course Catalogue</p>
+    <h1>Professional Financial Training</h1>
+    <p>Existing FITI programs are now available as individual online course offerings — live, recorded, and certified.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCourses('all', this)">All Courses</button>
+      <button class="filter-btn" onclick="filterCourses('compliance', this)">Compliance</button>
+      <button class="filter-btn" onclick="filterCourses('banking', this)">Banking</button>
+      <button class="filter-btn" onclick="filterCourses('insurance', this)">Insurance</button>
+      <button class="filter-btn" onclick="filterCourses('leadership', this)">Leadership</button>
+      <button class="filter-btn" onclick="filterCourses('digital', this)">Digital Finance</button>
+    </div>
+
+    <div class="course-grid" id="courseGrid">
+      <div class="card" data-cat="compliance">
+        <div class="card-top">🔍</div>
+        <div class="card-body">
+          <small>Compliance</small>
+          <h3>Anti-Money Laundering Fundamentals</h3>
+          <p>Core AML framework, red flags, suspicious transaction reporting, and compliance duties under RMA guidelines.</p>
+          <div class="card-meta"><span>⏱ 6 hours</span><span>🎓 Certificate</span></div>
+        </div>
+        <div class="card-footer">
+          <div class="price">BTN 1,200</div>
+          <a class="btn btn-primary" href="course-detail.html">View Details</a>
+        </div>
+      </div>
+
+      <div class="card" data-cat="banking">
+        <div class="card-top yellow">📊</div>
+        <div class="card-body">
+          <small>Banking</small>
+          <h3>Credit Risk Assessment</h3>
+          <p>Borrower analysis, loan structuring, repayment capacity assessment, and portfolio monitoring techniques.</p>
+          <div class="card-meta"><span>⏱ 8 hours</span><span>🎓 Certificate</span></div>
+        </div>
+        <div class="card-footer">
+          <div class="price">BTN 1,500</div>
+          <a class="btn btn-primary" href="course-detail.html">View Details</a>
+        </div>
+      </div>
+
+      <div class="card" data-cat="insurance">
+        <div class="card-top blue">🏦</div>
+        <div class="card-body">
+          <small>Insurance</small>
+          <h3>Insurance Product Design</h3>
+          <p>Insurance basics, product pricing, underwriting principles, risk pooling, and customer needs analysis.</p>
+          <div class="card-meta"><span>⏱ 7 hours</span><span>🎓 Certificate</span></div>
+        </div>
+        <div class="card-footer">
+          <div class="price">BTN 1,800</div>
+          <a class="btn btn-primary" href="course-detail.html">View Details</a>
+        </div>
+      </div>
+
+      <div class="card" data-cat="leadership">
+        <div class="card-top purple">🏢</div>
+        <div class="card-body">
+          <small>Leadership</small>
+          <h3>Branch Management</h3>
+          <p>Team leadership, customer service quality, compliance culture, performance management, and branch operations.</p>
+          <div class="card-meta"><span>⏱ 10 hours</span><span>🎓 Certificate</span></div>
+        </div>
+        <div class="card-footer">
+          <div class="price">BTN 1,600</div>
+          <a class="btn btn-primary" href="course-detail.html">View Details</a>
+        </div>
+      </div>
+
+      <div class="card" data-cat="digital">
+        <div class="card-top yellow">💻</div>
+        <div class="card-body">
+          <small>Digital Finance</small>
+          <h3>Digital Banking Basics</h3>
+          <p>Digital payment systems, online service delivery, mobile banking, fraud prevention, and customer trust building.</p>
+          <div class="card-meta"><span>⏱ 6 hours</span><span>🎓 Certificate</span></div>
+        </div>
+        <div class="card-footer">
+          <div class="price">BTN 1,400</div>
+          <a class="btn btn-primary" href="course-detail.html">View Details</a>
+        </div>
+      </div>
+
+      <div class="card" data-cat="compliance">
+        <div class="card-top blue">📑</div>
+        <div class="card-body">
+          <small>Regulation</small>
+          <h3>RMA Compliance Essentials</h3>
+          <p>Regulatory expectations, reporting requirements, ethical practice, governance frameworks, and audit readiness.</p>
+          <div class="card-meta"><span>⏱ 8 hours</span><span>🎓 Certificate</span></div>
+        </div>
+        <div class="card-footer">
+          <div class="price">BTN 1,700</div>
+          <a class="btn btn-primary" href="course-detail.html">View Details</a>
+        </div>
+      </div>
+
+      <div class="card" data-cat="banking">
+        <div class="card-top rose">💱</div>
+        <div class="card-body">
+          <small>Banking</small>
+          <h3>Treasury &amp; Foreign Exchange</h3>
+          <p>FX fundamentals, treasury operations, interest rate risk, liquidity management, and market risk basics.</p>
+          <div class="card-meta"><span>⏱ 9 hours</span><span>🎓 Certificate</span></div>
+        </div>
+        <div class="card-footer">
+          <div class="price">BTN 2,000</div>
+          <a class="btn btn-primary" href="course-detail.html">View Details</a>
+        </div>
+      </div>
+
+      <div class="card" data-cat="leadership">
+        <div class="card-top">🎯</div>
+        <div class="card-body">
+          <small>Leadership</small>
+          <h3>Financial Sector Ethics</h3>
+          <p>Professional ethics, conflict of interest, whistleblowing frameworks, and ethical decision-making in finance.</p>
+          <div class="card-meta"><span>⏱ 5 hours</span><span>🎓 Certificate</span></div>
+        </div>
+        <div class="card-footer">
+          <div class="price">BTN 1,100</div>
+          <a class="btn btn-primary" href="course-detail.html">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div style="position:relative;z-index:1;">
+    <h1>Need training for your whole team?</h1>
+    <p>Ask about our institutional subscription plans for banks and insurance companies.</p>
+    <div class="btn-row">
+      <a class="btn btn-orange btn-lg" href="institution.html">Register your institution</a>
+      <a class="btn btn-ghost btn-lg" href="pricing.html">View pricing</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">FITI<span>Learn</span></a>
+        <p>Financial Institutions Training Institute — Bhutan's dedicated financial services training body, endorsed by the Royal Monetary Authority.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="courses.html">Courses</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="how.html">How it works</a>
+      </div>
+      <div class="footer-col">
+        <h4>Institution</h4>
+        <a href="about.html">About FITI</a>
+        <a href="institution.html">Partner with us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>fiti@rma.org.bt</p>
+        <p>+975 2 322 223</p>
+        <p>Thimphu, Bhutan</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Financial Institutions Training Institute (FITI). All rights reserved.</p>
+      <p>Endorsed by the Royal Monetary Authority of Bhutan</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
